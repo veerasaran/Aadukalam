@@ -62,6 +62,10 @@ const asyncHandler = (fn) => (req, res, next) => {
     console.log("auth is working");
     res.status(200).send("HI IAM WORKING");
   }))
+
+  router.get("/debug-error", (req, res) => {
+    res.send(global.lastSignupError || "No errors caught yet!");
+  });
 module.exports = {
     router
 };

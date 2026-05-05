@@ -17,6 +17,11 @@ async function signUp(req,res) {
     else{
         const otp = OtpGenerator();
     try{
+        // Clean up any previously stuck pending OTP requests for this roll number to prevent Unique Constraint (P2002) errors
+        await prisma.oTPStudent.deleteMany({
+            where: { rno: req.body.rno }
+        });
+
         const student = await prisma.oTPStudent.create({
             data:{
                 name: req.body.name,
@@ -44,6 +49,7 @@ async function signUp(req,res) {
     }
     catch(error){
         console.log(error)
+        global.lastSignupError = error.message || error.toString();
         res.status(400).json({
             err: error.message || "Internal error"
         })
