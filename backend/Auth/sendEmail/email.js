@@ -7,13 +7,13 @@ async function SendEmail(toAddr , otp) {
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth:{
-                user: "220701239@rajalakshmi.edu.in" , 
-                pass: "jbfi hrwn njyb ezqs"
+                user: process.env.EMAIL_ID, 
+                pass: process.env.PASSWORD
             },
         });
 
         const mailObject = {
-            from : "220701239@rajalakshmi.edu.in",
+            from : process.env.EMAIL_ID,
             to : toAddr , 
             subject  : "Leo Das",
             text: ` ${otp}`
