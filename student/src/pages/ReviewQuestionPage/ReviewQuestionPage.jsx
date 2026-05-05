@@ -6,7 +6,7 @@ function ReviewQuestionPage(){
     const {reviewData , setReviewData} = useState({})
     useEffect(()=>{
         const getData = async() =>{
-            const review = await fetch("http://localhost:4000/basic/review-question",{
+            const review = await fetch("https://aadukalam-api.azurewebsites.net/basic/review-question",{
                 method:"POST",
                 body: JSON.stringify(loginData),
                 headers:{

@@ -12,7 +12,7 @@ const QuestionDashboard = ({details , setDetailsBox , detailsBox , uname}) => {
   async function handleClick(questionTitle){
     console.log("hi")
     try{
-      const details = await fetch("http://localhost:4000/basic/question", {
+      const details = await fetch("https://aadukalam-api.azurewebsites.net/basic/question", {
                   method: "POST",
                   body: JSON.stringify({ uname: uname, session: Cookies.get("session"), qname: questionTitle }),
                   headers: {

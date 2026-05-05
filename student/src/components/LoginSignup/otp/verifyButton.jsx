@@ -5,7 +5,7 @@ function VerifyButton({type,rno,otp}){
     async function verify(){
         try{
             console.log(JSON.stringify(otp))
-            const verification = await fetch(`http://localhost:4000/login-signup/otp-verify-${type}`,{
+            const verification = await fetch(`https://aadukalam-api.azurewebsites.net/login-signup/otp-verify-${type}`,{
                 method:"POST",
                 body: JSON.stringify({rno:rno,otp:otp}),
                 headers:{

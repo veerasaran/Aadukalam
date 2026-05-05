@@ -9,7 +9,7 @@ const DummyPage = () => {
 
   useEffect(()=>{
     console.log("here")
-    fetch("http://localhost:4000/admin/load", {
+    fetch("https://aadukalam-api.azurewebsites.net/admin/load", {
       method: "POST",
       body: "{}",
       headers: {

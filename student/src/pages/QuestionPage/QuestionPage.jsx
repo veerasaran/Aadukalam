@@ -16,7 +16,7 @@ function QuestionPage(){
             if(attempt === "Start New Attempt"){
                 const flag = window.confirm("Sure to start a new attempt????")
                 if(flag){
-                    const createSubmission =  await fetch("http://localhost:4000/submission/solve-question",{
+                    const createSubmission =  await fetch("https://aadukalam-api.azurewebsites.net/submission/solve-question",{
                         method:"POST",
                         body: JSON.stringify({
                             session:Cookies.get("session"),
@@ -53,7 +53,7 @@ function QuestionPage(){
 
     useEffect(()=>{
         const isSubmittedFunc = async () => {
-            const submissionData = await fetch("http://localhost:4000/basic/question",{
+            const submissionData = await fetch("https://aadukalam-api.azurewebsites.net/basic/question",{
                 method:"POST",
                 body: JSON.stringify({session:Cookies.get("session"),uname:uname , qname:qname}),
                 headers:{

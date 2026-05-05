@@ -65,7 +65,7 @@ const   ContestHandlerPage = () => {
     let dt = {}
     const dummy =  await new Promise ((resolve)=>{
         toast.promise(new Promise((resolve,reject)=>{
-          fetch("http://localhost:4000/submission/submit-contest", {
+          fetch("https://aadukalam-api.azurewebsites.net/submission/submit-contest", {
             method: "POST",
             body: JSON.stringify({ uname: uname, session: Cookies.get("session"), tname: cname }),
             headers: {
@@ -110,7 +110,7 @@ const   ContestHandlerPage = () => {
 
   async function fetchData() {
       try {
-        const details = await fetch("http://localhost:4000/basic/contest-handle", {
+        const details = await fetch("https://aadukalam-api.azurewebsites.net/basic/contest-handle", {
           method: "POST",
           body: JSON.stringify({ uname: uname, session:Cookies.get("session"), tname: cname }),
           headers: {

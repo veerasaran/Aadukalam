@@ -26,7 +26,7 @@ function SignUpButton({setOtpDiv , signUpError , setSignUpError , signUpData}){
             //     //rno
             // }
             if(flag){
-                const setOtp = await fetch("http://localhost:4000/login-signup/signup",{
+                const setOtp = await fetch("https://aadukalam-api.azurewebsites.net/login-signup/signup",{
                     method:"POST",
                     body: JSON.stringify(signUpData),
                     headers:{

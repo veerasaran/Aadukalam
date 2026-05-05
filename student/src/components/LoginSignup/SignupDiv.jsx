@@ -3,7 +3,7 @@ function Signup({signupData , setSignupData ,signUpError , setSignUpError}){
 
     async function verify(val){
         try{
-            const verification = await fetch("http://localhost:4000/login-signup/uname-verify",{
+            const verification = await fetch("https://aadukalam-api.azurewebsites.net/login-signup/uname-verify",{
                 method:"POST",
                 body: JSON.stringify({"uname":val}),
                 headers:{

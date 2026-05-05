@@ -23,7 +23,7 @@ function LoginButton({forgotPassword ,loginData , loginError , setLoginError , s
             if (flag){
                 console.log("inside if")
                 try{
-                    const submit = await fetch("http://localhost:4000/login-signup/login",{
+                    const submit = await fetch("https://aadukalam-api.azurewebsites.net/login-signup/login",{
                         method:"POST",
                         body: JSON.stringify(loginData),
                         headers:{
@@ -55,7 +55,7 @@ function LoginButton({forgotPassword ,loginData , loginError , setLoginError , s
                 flag = false
             }
             try{
-                const otp = await fetch("http://localhost:4000/login-signup/forgot-password",{
+                const otp = await fetch("https://aadukalam-api.azurewebsites.net/login-signup/forgot-password",{
                     method:"POST",
                     body: JSON.stringify(loginData),
                     headers:{

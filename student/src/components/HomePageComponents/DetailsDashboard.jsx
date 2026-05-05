@@ -47,7 +47,7 @@ const DashboardDetails = ({ type, details , uname }) => {
           setBtnVisible(false)
           const dummy =  await new Promise ((resolve)=>{
               toast.promise(new Promise((resolve,reject)=>{
-                fetch("http://localhost:4000/submission/solve-question", {
+                fetch("https://aadukalam-api.azurewebsites.net/submission/solve-question", {
                   method: "POST",
                   body: JSON.stringify({ uname: uname, session: Cookies.get("session"), title: qname }),
                   headers: {
@@ -102,7 +102,7 @@ const DashboardDetails = ({ type, details , uname }) => {
         setBtnVisible(false)
         const dummy =  await new Promise ((resolve)=>{
             toast.promise(new Promise((resolve,reject)=>{
-              fetch("http://localhost:4000/submission/solve-contest", {
+              fetch("https://aadukalam-api.azurewebsites.net/submission/solve-contest", {
                 method: "POST",
                 body: JSON.stringify({ uname: uname, session: Cookies.get("session"), title: cname }),
                 headers: {

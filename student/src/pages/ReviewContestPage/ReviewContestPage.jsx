@@ -10,7 +10,7 @@ const ReviewContestPage = () => {
 
   async function fetchData() {
     try {
-      const rev = await fetch("http://localhost:4000/basic/contest-review", {
+      const rev = await fetch("https://aadukalam-api.azurewebsites.net/basic/contest-review", {
         method: "POST",
         body: JSON.stringify({
           session: Cookies.get("session"),

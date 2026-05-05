@@ -49,7 +49,7 @@ function SubmitButton({loginData , forgotPassword , setOTPdiv , disable , setDis
         setDisable(true)
         const dummy =  await new Promise ((resolve)=>{
           toast.promise(new Promise((resolve,reject)=>{
-            fetch("http://localhost:4000/login-signup/login", {
+            fetch("https://aadukalam-api.azurewebsites.net/login-signup/login", {
               method: "POST",
               body: JSON.stringify(loginData),
               headers: {
@@ -114,7 +114,7 @@ function SubmitButton({loginData , forgotPassword , setOTPdiv , disable , setDis
         setDisable(true)
         const dummy =  await new Promise ((resolve)=>{
           toast.promise(new Promise((resolve,reject)=>{
-            fetch("http://localhost:4000/login-signup/forgot-password", {
+            fetch("https://aadukalam-api.azurewebsites.net/login-signup/forgot-password", {
               method: "POST",
               body: JSON.stringify(loginData),
               headers: {
