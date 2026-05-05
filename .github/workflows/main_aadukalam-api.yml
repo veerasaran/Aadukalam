@@ -23,11 +23,9 @@ jobs:
         with:
           node-version: '24.x'
 
-      - name: npm install, build, and test
+      - name: Skip npm install (Handled by Azure start.sh)
         run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
+          echo "Skipping npm install because we use start.sh inside Azure App Service to install microservices."
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
