@@ -3,6 +3,11 @@
 # Navigate to the backend directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+echo "Setting up Prisma Database Schema..."
+cd "$SCRIPT_DIR/dbSchema" || exit
+npm install
+npx prisma generate
+
 echo "Starting Proxy Service..."
 cd "$SCRIPT_DIR/proxy" || exit
 npm install --production
