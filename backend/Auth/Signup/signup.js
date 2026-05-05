@@ -42,14 +42,14 @@ async function signUp(req,res) {
             }
         });
         const sendEmail = await SendEmail(req.body.rno+"@rajalakshmi.edu.in" , otp);
-        if(sendEmail==1){
+        if(sendEmail.success){
             res.status(200).json({
-                msg:"OTP is resent successfully"
+                msg:"OTP is sent successfully"
             })
         }
         else{
             res.status(200).json({
-                err: "Error in sending email"
+                err: "Email Error: " + sendEmail.error
             })
         }
     }

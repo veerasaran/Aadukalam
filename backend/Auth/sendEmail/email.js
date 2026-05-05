@@ -20,11 +20,11 @@ async function SendEmail(toAddr , otp) {
         }
 
         const status = await transporter.sendMail(mailObject);
-        return 1;
+        return { success: true };
     }
     catch (error){
-        console.log(error)
-        return 0;
+        console.log("Email Error:", error);
+        return { success: false, error: error.message || error.toString() };
     }
 }
 
