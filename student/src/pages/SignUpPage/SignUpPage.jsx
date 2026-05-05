@@ -87,7 +87,7 @@ const SignUpPage = () => {
 
   const handleSignup = async () => {
     if (!/^2[234]\d{7}$/.test(signupData.rno)) {
-      toast.error("Enter a valid username", {
+      toast.error("Enter a valid roll number (eg: 220701239)", {
         style: {
           fontSize: "1.125rem",
           fontWeight: 300,
