@@ -30,7 +30,7 @@ const SignUpPage = () => {
         event.preventDefault();
         event.returnValue = "";
       } else {
-        fetch("https://aadukalam-api.azurewebsites.net/login-signup/force-quit-signup", { method: "POST" });
+        fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/login-signup/force-quit-signup", { method: "POST" });
       }
     };
 
@@ -43,7 +43,7 @@ const SignUpPage = () => {
     let dt = {};
     const dummy = await new Promise((resolve) => {
       toast.promise(new Promise((resolve, reject) => {
-        fetch("https://aadukalam-api.azurewebsites.net/login-signup/uname-verify", {
+        fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/login-signup/uname-verify", {
           method: "POST",
           body: JSON.stringify({ "uname": val }),
           headers: {
@@ -124,7 +124,7 @@ const SignUpPage = () => {
     let dt = {};
     const dummy = await new Promise((resolve) => {
       toast.promise(new Promise((resolve, reject) => {
-        fetch("https://aadukalam-api.azurewebsites.net/login-signup/signup", {
+        fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/login-signup/signup", {
           method: "POST",
           body: JSON.stringify(signupData),
           headers: {
@@ -173,7 +173,7 @@ const SignUpPage = () => {
     setOtpdis(true);
     const dummy = await new Promise((resolve) => {
       toast.promise(new Promise((resolve, reject) => {
-        fetch("https://aadukalam-api.azurewebsites.net/login-signup/otp-verify-signup", {
+        fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/login-signup/otp-verify-signup", {
           method: "POST",
           body: JSON.stringify({ rno: signupData.rno, otp: otpData }),
           headers: {

@@ -17,7 +17,7 @@ function ContestBasicPage() {
     } 
     else if (attemptButton === "START NEW ATTEMPT") {
       try {
-        const startAttempt = await fetch("https://aadukalam-api.azurewebsites.net/submission/solve-contest", {
+        const startAttempt = await fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/submission/solve-contest", {
           method: "POST",
           body: JSON.stringify({ uname: uname, session: Cookies.get("session"), tname: tname }),
           headers: {
@@ -40,7 +40,7 @@ function ContestBasicPage() {
 
   async function fetchData() {
     try {
-      const details = await fetch("https://aadukalam-api.azurewebsites.net/basic/contest-basic", {
+      const details = await fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/basic/contest-basic", {
         method: "POST",
         body: JSON.stringify({ uname: uname, session: Cookies.get("session"), tname: tname }),
         headers: {

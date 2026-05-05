@@ -47,7 +47,7 @@ function HomePage(){
   const fetchData = async () => {
     const session = Cookies.get("session");
     try {
-      const result = await fetch("https://aadukalam-api.azurewebsites.net/basic/home", {
+      const result = await fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/basic/home", {
         method: "POST",
         body: JSON.stringify({ uname, session }),
         headers: {

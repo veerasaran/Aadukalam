@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 const ContestsDashboard = ({details , setDetailsBox , uname}) => {
   async function handleClick(contestTitle) {
     try {
-      const details = await fetch("https://aadukalam-api.azurewebsites.net/basic/contest-basic", {
+      const details = await fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/basic/contest-basic", {
         method: "POST",
         body: JSON.stringify({ uname: uname, session: Cookies.get("session"), tname: contestTitle }),
         headers: {

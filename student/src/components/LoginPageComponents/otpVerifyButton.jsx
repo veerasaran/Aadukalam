@@ -14,7 +14,7 @@ function OtpVerifyButton({otp ,rno ,otpdis , setOtpdis}){
         setOtpdis(true)
         const dummy =  await new Promise ((resolve)=>{
             toast.promise(new Promise((resolve,reject)=>{
-              fetch("https://aadukalam-api.azurewebsites.net/login-signup/otp-verify-login", {
+              fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/login-signup/otp-verify-login", {
                 method: "POST",
                 body: JSON.stringify({otp:otp , rno:rno}),
                 headers: {

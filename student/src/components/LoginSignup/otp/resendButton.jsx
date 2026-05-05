@@ -1,7 +1,7 @@
 function ResendButton({rno}){
     async function resendOtp(){
         try{
-            const resend = await fetch("https://aadukalam-api.azurewebsites.net/login-signup/otp-resend",{
+            const resend = await fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/login-signup/otp-resend",{
                 method:"POST",
                 body: JSON.stringify({rno:rno}),
                 headers:{

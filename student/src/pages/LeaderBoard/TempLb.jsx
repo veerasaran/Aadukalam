@@ -12,7 +12,7 @@ const LeaderboardPage = () => {
     async function fetchData() {
 
       try {
-        const details = await fetch("https://aadukalam-api.azurewebsites.net/basic/leaderBoard", {
+        const details = await fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/basic/leaderBoard", {
           method: "POST",
           body: JSON.stringify({}),
             headers: {

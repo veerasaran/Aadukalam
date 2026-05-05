@@ -30,7 +30,7 @@ const CodingPage = () => {
   const autoSave = async () => {
     const dummy =  await new Promise ((resolve)=>{
         toast.promise(new Promise((resolve,reject)=>{
-          fetch("https://aadukalam-api.azurewebsites.net/submission/auto-save-solution", {
+          fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/submission/auto-save-solution", {
             method: "POST",
             body: JSON.stringify({
                uname: uname,
@@ -159,7 +159,7 @@ public class Main {
   async function fetchData() {
     setLoading(true);
     try {
-      const response = await fetch("https://aadukalam-api.azurewebsites.net/basic/coding-page", {
+      const response = await fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/basic/coding-page", {
         method: "POST",
         body: JSON.stringify({ uname: uname, session: Cookies.get("session"), qname: qname }),
         headers: {
@@ -261,7 +261,7 @@ public class Main {
       
       const dummy =  await new Promise ((resolve)=>{
           toast.promise(new Promise((resolve,reject)=>{
-            fetch("https://aadukalam-api.azurewebsites.net/submission/check-submission", {
+            fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/submission/check-submission", {
               method: "POST",
               body: JSON.stringify({ 
                 uname: uname, 
@@ -353,7 +353,7 @@ public class Main {
         let status2 = false
         const dummy =  await new Promise ((resolve)=>{
           toast.promise(new Promise((resolve,reject)=>{
-            fetch("https://aadukalam-api.azurewebsites.net/submission/submit-question", {
+            fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/submission/submit-question", {
               method: "POST",
               body: JSON.stringify({ uname: uname, session: Cookies.get("session"), sId: details.details.data.id , tname:qname}),
               headers: {
@@ -395,7 +395,7 @@ public class Main {
       }
       const dummy =  await new Promise ((resolve)=>{
                     toast.promise(new Promise((resolve,reject)=>{
-                      fetch("https://aadukalam-api.azurewebsites.net/submission/submit-question-of-a-contest", {
+                      fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/submission/submit-question-of-a-contest", {
                         method: "POST",
                         body: JSON.stringify({ uname: uname, session: Cookies.get("session"), submissionId: details.details.data.id}),
                         headers: {

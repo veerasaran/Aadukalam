@@ -38,7 +38,7 @@ const NavBar = ({ userData, currentPath, viewMode, rank }) => {
       const dummy = await new Promise((resolve) => {
         toast.promise(
           new Promise((resolve, reject) => {
-            fetch("https://aadukalam-api.azurewebsites.net/login-signup/logout", {
+            fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/login-signup/logout", {
               method: "POST",
               body: JSON.stringify({ session: Cookies.get("session"), uname: uname }),
               headers: {

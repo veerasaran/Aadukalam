@@ -21,7 +21,7 @@ function SubmitButton({OTPverify ,login,forgotPassword, loginData , signupData ,
                 setPasswordError({"val":"Kaathula ola otirukken"})
             }
             if(flag==0){
-            fetch("https://aadukalam-api.azurewebsites.net/login-signup/login",{
+            fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/login-signup/login",{
                 method: 'Post',
                 headers: {
                   'Content-Type': 'application/json'
@@ -50,7 +50,7 @@ function SubmitButton({OTPverify ,login,forgotPassword, loginData , signupData ,
             
         }
         else{
-            fetch("https://aadukalam-api.azurewebsites.net/login-signup/signup",{
+            fetch("https://aadukalam-api-cgd7f8fhfug8a7dk.southeastasia-01.azurewebsites.net/login-signup/signup",{
                 method: 'Post',
                 headers: {
                   'Content-Type': 'application/json'
