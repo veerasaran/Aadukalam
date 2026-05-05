@@ -8,7 +8,7 @@ const setRequestBodydata = (proxyReq, req, res) => {
       proxyReq.write(bodyData);
     }
   }
-  const responseHandle = (proxyRes, req, res) => proxyRes.headers['access-control-allow-origin'] = '*'
+  const responseHandle = (proxyRes, req, res) => {}
   const proxyError = (err, req, res) => {
     console.error('Proxy Error:', err);
     res.status(500).send('Proxy Error');
