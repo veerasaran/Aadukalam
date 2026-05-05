@@ -23,9 +23,15 @@ jobs:
         with:
           node-version: '22.x' # Using 22 since that's what you selected in Azure
 
-      - name: Skip npm install (Handled by Azure start.sh)
+      - name: Install dependencies for microservices
         run: |
-          echo "Skipping npm install because we use start.sh inside Azure App Service to install microservices."
+          cd backend/dbSchema && npm install && npx prisma generate
+          cd ../proxy && npm install --production
+          cd ../Auth && npm install --production
+          cd ../basic && npm install --production
+          cd ../codeSubmission && npm install --production
+          cd ../Admin && npm install --production
+          cd ../AutoSubmission && npm install --production
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
