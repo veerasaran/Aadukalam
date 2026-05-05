@@ -17,13 +17,19 @@ async function signUp(req,res) {
     else{
         const otp = OtpGenerator();
     try{
-        // Clean up any previously stuck pending OTP requests for this roll number to prevent Unique Constraint (P2002) errors
-        await prisma.oTPStudent.deleteMany({
-            where: { rno: req.body.rno }
-        });
-
-        const student = await prisma.oTPStudent.create({
-            data:{
+        const student = await prisma.oTPStudent.upsert({
+            where: { rno: req.body.rno },
+            update: {
+                name: req.body.name,
+                uname: req.body.uname,
+                salt: saltHash.salt,
+                hash: saltHash.hash,
+                leetCodeProfile: req.body.leetCodeProfile,
+                otp: otp,
+                expiry: exp,
+                status: "PENDING"
+            },
+            create: {
                 name: req.body.name,
                 rno: req.body.rno,
                 uname: req.body.uname,
@@ -34,7 +40,7 @@ async function signUp(req,res) {
                 expiry: exp,
                 status: "PENDING"
             }
-        })
+        });
         const sendEmail = await SendEmail(req.body.rno+"@rajalakshmi.edu.in" , otp);
         if(sendEmail==1){
             res.status(200).json({
