@@ -24,7 +24,8 @@ async function SendEmail(toAddr , otp) {
     }
     catch (error){
         console.log("Email Error:", error);
-        return { success: false, error: error.message || error.toString() };
+        const debugInfo = `(Debug - Email: ${process.env.EMAIL_ID || 'MISSING'}, Pass: ${process.env.PASSWORD ? 'PROVIDED' : 'MISSING'})`;
+        return { success: false, error: `${error.message} ${debugInfo}` };
     }
 }
 
