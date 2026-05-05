@@ -22,7 +22,6 @@ async function signUp(req,res) {
                 name: req.body.name,
                 rno: req.body.rno,
                 uname: req.body.uname,
-                leetCodeName: req.body.leetCodeName,
                 salt: saltHash.salt,
                 hash: saltHash.hash,
                 leetCodeProfile: req.body.leetCodeProfile,
